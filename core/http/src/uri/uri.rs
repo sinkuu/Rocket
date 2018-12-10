@@ -84,7 +84,7 @@ impl<'a> Uri<'a> {
         query: Option<Indexed<'a, [u8]>>,
     ) -> Uri<'a> {
         let origin = Origin::raw(source.clone(), path, query);
-        Uri::Absolute(Absolute::raw(source.clone(), scheme, None, Some(origin)))
+        Uri::Absolute(Absolute::raw(source, scheme, None, Some(origin)))
     }
 
     /// Parses the string `string` into a `Uri`. Parsing will never allocate.

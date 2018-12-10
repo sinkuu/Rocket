@@ -41,7 +41,7 @@ fn key<'a>(input: &mut &'a str) -> Result<String, &'a str> {
 
 #[parser]
 fn key_value<'a>(input: &mut &'a str) -> Result<(String, Value), &'a str> {
-    let key = (surrounded(key, is_whitespace)?, eat('=')?).0.to_string();
+    let key = (surrounded(key, is_whitespace)?, eat('=')?).0;
     (key, surrounded(value, is_whitespace)?)
 }
 

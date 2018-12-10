@@ -397,7 +397,7 @@ impl RocketConfig {
             let kv_pairs = match value.as_table() {
                 Some(table) => table,
                 None => return Err(ConfigError::BadType(
-                    entry, "a table", value.type_str(), Some(path.clone())
+                    entry, "a table", value.type_str(), Some(path)
                 ))
             };
 
